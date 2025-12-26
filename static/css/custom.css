@@ -32,49 +32,55 @@ main {
 
 @media only screen and (max-width: 956px) {
     main,
-    .sidebar1,
-    .sidebar2,
-    .sidebar3 {
+.sidebar1,
+.sidebar2,
+.sidebar3 {
         width: 100%
-    }
-    .two-column.content-right main,
-    .three-column.content-center main,
-    .three-column.content-right main,
-    .four-column.content-left main,
-    .four-column.content-right main,
-    .four-column.content-far-right main {
+}
+.two-column.content-right main,
+.three-column.content-center main,
+.three-column.content-right main,
+.four-column.content-left main,
+.four-column.content-right main,
+.four-column.content-far-right main {
         -moz-order: 1;
         -ms-order: 1;
         -o-order: 1;
         -webkit-order: 1;
         order: 1
-    }
-    .banner nav {
+
+}
+.banner nav {
         background: none
-    }
-    .banner nav:before {
+
+}
+.banner nav:before {
         display: block;
         visibility: visible
-    }
-    .banner nav ul {
+
+}
+.banner nav ul {
         display: none;
         visibility: hidden
-    }
-    .banner nav select {
+
+}
+.banner nav select {
         display: block;
         visibility: visible;
         width: 100%
-    }
+}
 }
 
 nav.pagination .current {
     color: #000000;
+
 }
 
 .post-content h2 {
     border-left: 6px solid #ff6347;
     border-bottom: 1px solid #d1d1d1;
     padding-left: 4px;
+
 }
 
 .post-content h3 {
@@ -112,8 +118,8 @@ iframe {
 @media screen and (max-width: 40em) {
     div .nav-previous {
         display: none;
-    }
+}
     div .nav-next {
         display: none;
-    }
+}
 }
