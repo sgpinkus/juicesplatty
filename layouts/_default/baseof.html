@@ -1,3 +1,32 @@
+{{/* Default to show sidebar */}}
+{{ $showSidebar := true }}
+
+{{/* 1️⃣ Per-page override */}}
+{{ if isset .Params "sidebar" }}
+    {{ $showSidebar = .Params.sidebar }}
+{{ else }}
+    {{/* 2️⃣ Site-wide sidebar settings */}}
+    {{ $showSidebar = true }} <!-- default -->
+
+    {{ with .Site.Params.sidebar.kinds }}
+        {{ $showSidebar = false }}
+        {{ range . }}
+            {{ if eq . $.Kind }}
+                {{ $showSidebar = true }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ with .Site.Params.sidebar.types }}
+        {{ $showSidebar = false }}
+        {{ range . }}
+            {{ if eq . $.Type }}
+                {{ $showSidebar = true }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
 <!DOCTYPE html>
 <html>
     {{ partial "head.html" . }}
@@ -5,7 +34,9 @@
         {{ partial "header.html" . }}
         <div id="content" class="content">
         {{- block "main" . }}{{- end }}
-        {{ partial "sidebar.html" . }}
+        {{ if $showSidebar }}
+            {{ partial "sidebar.html" . }}
+        {{ end }}
         </div>
         {{ partial "footer.html" . }}
     </body>
