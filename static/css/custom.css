@@ -43,10 +43,6 @@ main {
 .four-column.content-left main,
 .four-column.content-right main,
 .four-column.content-far-right main {
-        -moz-order: 1;
-        -ms-order: 1;
-        -o-order: 1;
-        -webkit-order: 1;
         order: 1
 
 }

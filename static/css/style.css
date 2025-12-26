@@ -34,8 +34,6 @@ Webcomic: 4.3
  */
 html {
   font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
 }
 
@@ -219,7 +217,6 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -296,7 +293,6 @@ button, input[type="submit"], input[type="reset"], input[type="button"],
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
   /* 3 */
@@ -358,10 +354,7 @@ input[type="number"]::-webkit-outer-spin-button {
  *    (include `-moz` to future-proof).
  */
 input[type="search"] {
-  -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
 }
@@ -373,7 +366,6 @@ input[type="search"] {
  */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 /**
@@ -526,8 +518,6 @@ hr {
   border: 0;
   border-top: thin solid #767676;
   clear: both;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -628,8 +618,6 @@ label[for] {
 input {
   background: #fff;
   border: thin solid #767676;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #000;
   line-height: 1.8;
@@ -645,8 +633,6 @@ input {
     outline: 0;
 }
   input[type="search"] {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
   input[type="radio"], input[type="checkbox"] {
@@ -670,8 +656,6 @@ select {
 textarea {
   background: #fff;
   border: thin solid #767676;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #000;
   height: 10rem;
@@ -775,10 +759,6 @@ body > a[href="#content"] {
   display: -o-flex;
   display: -webkit-flex;
   display: flex;
-  -moz-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  -o-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .content:before, .content:after {
@@ -792,10 +772,6 @@ body > a[href="#content"] {
     outline: 0;
 }
 .content-footer {
-    -moz-order: 99;
-    -ms-order: 99;
-    -o-order: 99;
-    -webkit-order: 99;
     order: 99;
 }
 
@@ -812,34 +788,18 @@ main {
 }
 
 .sidebar1 {
-  -moz-order: 20;
-  -ms-order: 20;
-  -o-order: 20;
-  -webkit-order: 20;
   order: 20;
 }
 
 .sidebar2 {
-  -moz-order: 40;
-  -ms-order: 40;
-  -o-order: 40;
-  -webkit-order: 40;
   order: 40;
 }
 
 .sidebar3 {
-  -moz-order: 60;
-  -ms-order: 60;
-  -o-order: 60;
-  -webkit-order: 60;
   order: 60;
 }
 
 .two-column.content-right main {
-  -moz-order: 30;
-  -ms-order: 30;
-  -o-order: 30;
-  -webkit-order: 30;
   order: 30;
 }
 .two-column .sidebar1 {
@@ -847,17 +807,9 @@ main {
 }
 
 .three-column.content-center main {
-  -moz-order: 30;
-  -ms-order: 30;
-  -o-order: 30;
-  -webkit-order: 30;
   order: 30;
 }
 .three-column.content-right main {
-  -moz-order: 50;
-  -ms-order: 50;
-  -o-order: 50;
-  -webkit-order: 50;
   order: 50;
 }
 .three-column .sidebar1,
@@ -866,24 +818,12 @@ main {
 }
 
 .four-column.content-left main {
-  -moz-order: 30;
-  -ms-order: 30;
-  -o-order: 30;
-  -webkit-order: 30;
   order: 30;
 }
 .four-column.content-right main {
-  -moz-order: 50;
-  -ms-order: 50;
-  -o-order: 50;
-  -webkit-order: 50;
   order: 50;
 }
 .four-column.content-far-right main {
-  -moz-order: 70;
-  -ms-order: 70;
-  -o-order: 70;
-  -webkit-order: 70;
   order: 70;
 }
 .four-column .sidebar1,
@@ -995,10 +935,6 @@ main {
 .banner select {
     display: none;
     visibility: hidden;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    -webkit-appearance: none;
     appearance: none;
     background: #000;
     border: 0;
@@ -1352,10 +1288,6 @@ nav.pagination {
     border-radius: .3rem;
 }
 .page-template-templatefull-width-php main {
-  -moz-order: 1;
-  -ms-order: 1;
-  -o-order: 1;
-  -webkit-order: 1;
   order: 1;
 }
 .page-template-templatefull-width-php main,
