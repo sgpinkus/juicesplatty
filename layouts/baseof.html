@@ -31,13 +31,19 @@
 <html>
     {{ partial "head.html" . }}
     <body class="two-column">
-        {{ partial "header.html" . }}
-        <div id="content" class="content">
-        {{- block "main" . }}{{- end }}
-        {{ if $showSidebar }}
-            {{ partial "sidebar.html" . }}
-        {{ end }}
+        <div class="wrapper">
+            {{ partial "header.html" . }}
+            {{ partial "ad_header_banner.html" . }}
+            <div class="breadcrumbs">
+            </div>
+            <!-- <a href="#content">Skip to content</a> -->
+            <div id="content" class="content">
+                {{ block "main" . }}{{ end }}
+                {{ if $showSidebar }}
+                    {{ partial "sidebar.html" . }}
+                {{ end }}
+            </div>
+            {{ partial "footer.html" . }}
         </div>
-        {{ partial "footer.html" . }}
     </body>
 </html>

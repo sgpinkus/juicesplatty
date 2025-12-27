@@ -1,5 +1,4 @@
  {{ define "main" }}
-
 <main role="main">
     <article role="article" class="post type-post format-standard hentry">
         <header class="post-header">
@@ -16,17 +15,12 @@
 				{{ partial "share.html" . }}
             </div>
         </header>
-
         {{ if .Params.toc }}
         {{ partial "toc.html" . }}
         {{ end }}
-
         <div class="post-content">
             {{ .Content }}
         </div>
-
-
-
         <footer class="post-footer">
                 {{ $categories := .Params.categories }}
                 {{ $all_categories := .Site.Taxonomies.categories }}
@@ -39,7 +33,7 @@
                     {{- end }}
                 </span>
                 {{ end }}
-        
+
                 {{ $tags := .Params.tags }}
                 {{ $all_tags := .Site.Taxonomies.tags }}
                 {{ with $tags }}
@@ -55,8 +49,7 @@
         {{ partial "ad_double_rectangle.html" . }}
         {{ partial "relatedposts.html" . }}
     </article>
-
-    {{ if eq .Page.Type "post" }}
+    {{ if eq .Page.Type "posts" }}
     <nav class="navigation post-navigation" role="navigation">
         <div class="nav-links">
             <div class="nav-previous">
@@ -75,7 +68,5 @@
         {{ template "_internal/disqus.html" . }}
     </section>
     {{ end }}
-
 </main>
-
 {{ end }}
