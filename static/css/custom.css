@@ -1,29 +1,31 @@
-.sidebar1 {
-  width: 25%
-}
-
-.sidebar2 {
-  width: 25%
-}
-
-.sidebar3 {
-  width: 25%
-}
-
-main {
-  width: calc(75% - 2px)
+html, body {
+  height: 100vh;
 }
 
 .wrapper {
-  max-width: 1366px
+  max-width: 1366px;
+  min-height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
-.document-header {
-  max-width: 1366px
+.content {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+}
+
+main {
+  width: calc(75% - 2px);
+  flex-grow: 1;
+}
+
+.sidebar1 {
+  width: 25%;
 }
 
 .document-footer {
-  max-width: 1366px
+  margin: 0;
 }
 
 .more-link:after {
@@ -31,7 +33,7 @@ main {
 }
 
 @media only screen and (max-width: 956px) {
-  main,
+main,
 .sidebar1,
 .sidebar2,
 .sidebar3 {
@@ -44,7 +46,6 @@ main {
 .four-column.content-right main,
 .four-column.content-far-right main {
   order: 1
-
 }
 .banner nav {
   background: none
@@ -69,7 +70,6 @@ main {
 
 nav.pagination .current {
   color: #000000;
-
 }
 
 .post-content h2 {
