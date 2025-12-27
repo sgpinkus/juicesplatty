@@ -1,16 +1,13 @@
 name = "Inkblotty"
 license = "GPLv3"
-licenselink = "https://github.com/tosi29/inkblotty/blob/master/LICENSE"
+licenselink = "https://github.com/sgpinkus/juicesplatty/blob/master/LICENSE"
 description = "Responsive Hugo theme based on Inkblot of WordPress theme"
-homepage = "https://github.com/tosi29/inkblotty/"
+homepage = "https://github.com/sgpinkus/juicesplatty/"
 tags = ["blog", "responsive", "wordpress", "disqus", "google analytics"]
 features = ["blog", "responsive", "wordpress", "disqus", "google analytics"]
 min_version = "0.58"
-
 [author]
-  name = "tosi"
-  homepage = "https://tosi-tech.net/"
-
+  name = "sgpinkus"
 # If porting an existing theme
 [original]
   name = "Inkblot"

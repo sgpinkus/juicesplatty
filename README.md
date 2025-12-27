@@ -1,7 +1,7 @@
-# Inkblotty
-Inkblotty is a Hugo theme based on [Inkblot](https://github.com/mgsisk/inkblot).  
+# Juicesplatty
+Juicesplatty is a Hugo theme based on [Inkblotty](https://github.com/sgpinkus/inkblotty).
 
-[Demo](https://hugo-theme-inkblotty.netlify.com)
+[Demo](https://hugo-theme-juicesplatty.netlify.com)
 
 ## Features
 
@@ -25,18 +25,14 @@ Inkblotty is a Hugo theme based on [Inkblot](https://github.com/mgsisk/inkblot).
   - Opengraph / Twitter Card
 
 ## Installation
-1. Put theme directory into `themes` of your hugo site.
-   - Run git command in `themes` directory:
-     ```
-     git clone https://github.com/tosi29/inkblotty.git
-     ```
-   - Or, download and extract [zip file](https://github.com/tosi29/inkblotty/archive/master.zip), and put directory into `themes` directory as `inkblotty`.
 
-2. Edit `config.toml` of your hugo site.
+1. Put theme directory into `themes` of your hugo site.
+1. Run git command in `themes` directory: `git clone https://github.com/sgpinkus/juicesplatty.git`
+1. Edit `config.toml` of your hugo site.
 
 ## Configuration
 ### Sample configuration file
-[exampleSite/config.toml](https://github.com/tosi29/inkblotty/blob/master/exampleSite/config.toml) is for reference.
+[exampleSite/config.toml](https://github.com/sgpinkus/juicesplatty/blob/master/exampleSite/config.toml) is for reference.
 
 ### Table of Contents
 There are two ways to show a table of contents:
