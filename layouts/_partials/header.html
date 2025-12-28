@@ -5,22 +5,7 @@
     </a>
     {{- if .Site.Menus.main }}
     <nav role="navigation" aria-label="Primary Navigation">
-        <ul class="menu">
-            {{- $currentNode := . }}
-            {{- range sort .Site.Menus.main }}
-            {{- if .Name}}
-            <li class="menu-item {{if eq ($.Permalink|absURL) (.URL|absURL) }} current-menu-item current_page_item {{end}}"><a class="menu__link" href="{{ .URL }}">{{ .Name | upper }}</a></li>
-            {{- end }}
-            {{- end }}
-        </ul>
-        <select onChange="location.href=value;">
-            {{- $currentNode := . }}
-            {{- range sort .Site.Menus.main }}
-            {{- if .Name}}
-            <option value="{{ .URL }}" class="menu-item menu-item-type-custom menu-item-object-custom" {{if eq ($.Permalink|absURL) (.URL|absURL) }} selected="selected" {{end}}>{{ .Name | upper }}</option>
-            {{- end }}
-            {{- end }}
-        </select>
+        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
     </nav>
-    {{- end }}
+    {{- end -}}
 </header>

@@ -12,23 +12,19 @@ Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, w
 Text Domain: inkblot
 Webcomic: 4.3
 */
-/**
- * ===== PLEASE READ THIS ======================================================
- * You can make most common style modifications – including adding custom CSS –
- * using the Customizer. If you want to make extensive theme modifications you
- * should create a child theme.
- * =============================================================================
- */
+
 @font-face {
   font-family: 'awesome';
   font-style: normal;
   font-weight: normal;
-  src: url("fonts/fontawesome-webfont.eot");
-  src: url("fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
+  font-display: swap;
+  src: url("fonts/fontawesome-webfont.woff2") format("woff2"),
        url("fonts/fontawesome-webfont.woff") format("woff"),
        url("fonts/fontawesome-webfont.ttf") format("truetype"),
+       url("fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
        url("fonts/fontawesome-webfont.svg#fontawesomeregular") format("svg");
 }
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -911,7 +907,7 @@ main,
   opacity: 1;
   visibility: visible;
 }
-.banner li:focus > a, .banner li:hover > a, .banner li.current-menu-item > a, .banner li.current_page_item > a, .banner li.current_page_ancestor > a, .banner li.current-menu-ancestor > a {
+.banner li:focus > a, .banner li:hover > a, .banner li > a.active, .banner li > a.ancestor {
   color: #fff;
 }
 .banner .menu-item-has-children > a:after,
