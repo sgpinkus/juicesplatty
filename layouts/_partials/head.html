@@ -28,10 +28,11 @@
     {{ if (fileExists "static/favicon.ico") -}}
     <link rel='icon' href="/favicon.ico" />
     {{- end }}
-    <link rel='stylesheet' href='{{ "css/style.css" | relURL }}' type='text/css' media='all' />
-    <link rel='stylesheet' href='{{ "css/custom.css" | relURL }}' type='text/css' media='all' />
+    <link rel='stylesheet' href='{{ "css/inkblot.css" | relURL }}' type='text/css' media='all' />
+    <link rel='stylesheet' href='{{ "css/inkblot_custom.css" | relURL }}' type='text/css' media='all' />
     <link rel='stylesheet' href='{{ "css/syntax.css" | relURL }}' type='text/css' media='all' />
     <link rel='stylesheet' href='{{ "css/toc.css" | relURL }}' type='text/css' media='all' />
+    <link rel='stylesheet' href='{{ "css/custom.css" | relURL }}' type='text/css' media='all' />
     <script src="/js/menu.js"></script>
     {{ template "_internal/google_analytics.html" . }}
     <meta property="og:site_name" content="{{ .Site.Title }}">
