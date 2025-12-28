@@ -1,5 +1,5 @@
 # Juicesplatty
-Juicesplatty is a Hugo theme based on [Inkblotty](https://github.com/sgpinkus/inkblotty).
+Juicesplatty is a Hugo theme based on [Inkblotty](https://github.com/tosi29/inkblotty).
 
 [Demo](https://hugo-theme-juicesplatty.netlify.com)
 
@@ -31,6 +31,7 @@ Juicesplatty is a Hugo theme based on [Inkblotty](https://github.com/sgpinkus/in
 1. Edit `config.toml` of your hugo site.
 
 ## Configuration
+
 ### Sample configuration file
 [exampleSite/config.toml](https://github.com/sgpinkus/juicesplatty/blob/master/exampleSite/config.toml) is for reference.
 

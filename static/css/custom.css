@@ -24,6 +24,11 @@ main {
   width: 25%;
 }
 
+.sidebar1 aside ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
 .document-footer {
   margin: 0;
 }

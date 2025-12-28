@@ -1,0 +1,54 @@
+baseURL: "https://example.com"
+title: "Juicesplatty"
+author: "Author"
+theme: "juicesplatty"
+paginate: 10
+languageCode: "en-us"
+DefaultContentLanguage: "en-us"
+hasCJKLanguage: "true"
+enableInlineShortcodes: true
+footnoteReturnLinkContents: "^"
+disqusShortname: ""
+googleAnalytics: ""
+summaryLength: 150
+pygmentsUseClasses: true
+pygmentsCodefences: true
+permalinks:
+  post: "/:slug/"
+  page: "/:slug/"
+taxonomies:
+  tag: "tags"
+  category: "categories"
+  archive: "archives"
+menus:
+  main:
+    - identifier: "about"
+      name: "About"
+      weight: 1
+      pageRef: "/about/"
+    - identifier: "posts"
+      name: "Posts"
+      pageRef: "/posts/"
+      weight: 2
+    - identifier: "services"
+      name: "Services"
+      # pageRef: "/services/"
+      weight: 30
+    - name: "dumps"
+      pageRef: "/dump"
+      parent: "services"
+      weight: 10
+    - name: "cores"
+      pageRef: "/core"
+      parent: "services"
+      weight: 20
+params:
+  readmore: true
+outputs: # c.f. https://gohugo.io/templates/output-formats/
+  home: ["HTML", "RSS"]
+  page: ["HTML"]
+  section: ["HTML", "RSS"]
+  taxonomyTerm: ["HTML", "RSS"]
+  taxonomy: ["HTML", "RSS"]
+sitemap:
+  filename: "sitemap.xml" # c.f. https://gohugo.io/templates/sitemap-template/#configure-sitemap-xml
