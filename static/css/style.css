@@ -13,6 +13,7 @@ Text Domain: inkblot
 Webcomic: 4.3
 */
 
+/* wget "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/ontawesome-webfont.<ext> */
 @font-face {
   font-family: 'awesome';
   font-style: normal;
