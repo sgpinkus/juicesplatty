@@ -6,6 +6,16 @@
     {{- if .Site.Menus.main }}
     <nav role="navigation" aria-label="Primary Navigation">
         {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+        <div class="spacer" style="flex-grow: 1"></div>
+        <button
+            class="hamburger"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="main-menu"
+            style="align-self: baseline"
+        >
+        ☰
+        </button>
     </nav>
     {{- end -}}
 </header>

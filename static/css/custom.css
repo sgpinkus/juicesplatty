@@ -41,40 +41,36 @@ main {
   content: ''
 }
 
-@media only screen and (max-width: 956px) {
-main,
-.sidebar1,
-.sidebar2,
-.sidebar3 {
-  width: 100%
-}
-.two-column.content-right main,
-.three-column.content-center main,
-.three-column.content-right main,
-.four-column.content-left main,
-.four-column.content-right main,
-.four-column.content-far-right main {
-  order: 1
-}
-.banner nav {
-  background: none
-
-}
-.banner nav:before {
-  display: block;
-  visibility: visible
-
-}
-.banner nav ul {
+.banner button.hamburger {
   display: none;
-  visibility: hidden
+}
 
+.banner nav {
+  display: flex !important;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
-.banner nav select {
-  display: block;
-  visibility: visible;
-  width: 100%
-}
+
+@media only screen and (max-width: 756px) {
+  main,
+  .sidebar1,
+  .sidebar2,
+  .sidebar3 {
+    width: 100%
+  }
+  .banner nav ul {
+    display: none;
+  }
+  .banner nav.is-open ul {
+    display: block;
+  }
+  .banner nav.is-open ul li {
+    float: none;
+    position: normal;
+  }
+  .banner button.hamburger {
+    display: block;
+  }
 }
 
 nav.pagination .current {
