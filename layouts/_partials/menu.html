@@ -18,6 +18,9 @@
     {{- else if $page.HasMenuCurrent .Menu .}}
       {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
     {{- end }}
+    {{- if .Children }}
+      {{- $attrs = merge $attrs (dict "class" "has-children") }}
+    {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}
       {{- with T . }}

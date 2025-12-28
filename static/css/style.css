@@ -911,17 +911,10 @@ main,
 .banner li:focus > a, .banner li:hover > a, .banner li > a.active, .banner li > a.ancestor {
   color: #fff;
 }
-.banner .menu-item-has-children > a:after,
-.banner .page_item_has_children > a:after {
+.banner li > a.has-children:after {
   font: 100%/1 awesome;
   content: '\f13a';
   margin: 0 0 0 .5rem;
-}
-.banner .menu-item-has-children .menu-item-has-children > a:after,
-.banner .menu-item-has-children .page_item_has_children > a:after,
-.banner .page_item_has_children .menu-item-has-children > a:after,
-.banner .page_item_has_children .page_item_has_children > a:after {
-  content: '\f138';
 }
 .banner select {
   display: none;
