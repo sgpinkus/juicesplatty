@@ -1,22 +1,6 @@
 {{ $recent_posts_num := (.Site.Params.widgets.recentPostsNum | default 10) -}}
 {{ $posts_section := .Site.Params.contentTypeName | default (slice "posts") -}}
 
-{{/* https://gohugo.io/quick-reference/glossary/#default-sort-order */}}
-{{ $all_posts := where .Site.RegularPages "Section" "in" $posts_section -}}
-{{ $zeroTime := time.AsTime "0001-01-01T00:00:00Z" }}
-
-<!-- Pinned posts (any date, even undated) -->
-{{ $pinned := where $all_posts "Params.pinned" "==" true }}
-{{ $pinned = sort $pinned "Date" "desc" }}
-
-<!-- Non-pinned posts with a real date -->
-{{ $dated := where $all_posts "Params.pinned" "!=" true }}
-{{ $dated := where $dated ".Date" "gt" $zeroTime }}
-{{ $dated := sort $dated "Date" "desc" }}
-
-<!-- Combine: pinned first, then dated posts -->
-{{ $recent_posts :=  union $pinned $dated | first $recent_posts_num }}
-
 <div class="sidebar1 widgets columns-1">
     {{ partial "sidebar_top.html" }}
     <aside class="widget widget_categories">
@@ -24,9 +8,11 @@
         <ul class="widget__list">
             {{- if .Site.Taxonomies.categories }}
             {{- range $name, $items := .Site.Taxonomies.categories -}}
+            {{- if not (strings.HasPrefix $name "_") }}
             <li class="cat-item cat-item-2">
                 <a href="{{- .Page.Permalink -}}">{{ .Page.Title }} ({{ $items.Count }})</a>
             </li>
+            {{- end }}
             {{- end }}
             {{- else }}
             <li><a>-</a></li>
@@ -38,7 +24,9 @@
         {{- if .Site.Taxonomies.tags }}
         <div class="tagcloud">
             {{- range $name, $items := .Site.Taxonomies.tags -}}
+            {{ if not (strings.HasPrefix $name "_") }}
             <a class="tag-cloud-link" href="{{- .Page.Permalink -}}" title="{{ $name }}" style="font-size: 12pt; white-space: nowrap">{{ .Page.Title }} ({{ $items.Count }})</a>&emsp;
+            {{- end }}
             {{- end }}
         </div>
         {{- else }}
@@ -47,20 +35,7 @@
     </aside>
     <aside class="widget widget_recent_entries">
         <h2>{{ T "recent_posts_title" }}</h2>
-        <ul>
-            {{- if $recent_posts  }}
-            {{- range $recent_posts }}
-            <li>
-                <a href="{{ .RelPermalink }}">
-                    <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
-                    {{ .Title }}
-                </a>
-            </li>
-            {{- end }}
-            {{- else }}
-            <li><a>-</a></li>
-            {{- end }}
-        </ul>
+        {{ partial "list_posts.html" (dict "page" . "num" $recent_posts_num "requireDate" true) }}
     </aside>
     <aside class="widget widget_archive">
         <h2>{{ T "archives_title" }}</h2>

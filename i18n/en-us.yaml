@@ -2,15 +2,13 @@
 
 - id: related_posts_title
   translation: Related Posts
-
 - id: categories_title
   translation: Categories
-
 - id: tags_title
   translation: Tags
-
 - id: recent_posts_title
-  translation: Recent Posts
-
+  translation: Recent
 - id: archives_title
   translation: Archives
+- id: pinned_posts_title
+  translation: Pinned

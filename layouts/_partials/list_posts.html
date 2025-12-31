@@ -1,0 +1,51 @@
+{{/*
+Example usage:
+
+{{ partial "list_posts.html" (dict "category" "news" "num" 5 "posts_section" "articles") }}
+*/}}
+
+{{- $posts_section := .posts_section | default "posts" -}}
+{{- $num := .num | default 10 -}}
+{{- $requireDate := .requireDate | default false }}
+{{- $summary := .summary | default false -}}
+{{- $empty_content := .empty_content | default false }}
+{{- $custom_class := .class | default "" -}}
+{{/* $list_style := .list_style | default "" */}}
+{{- $category := .category -}}
+{{- $tags := .tags | default "" -}}
+
+{{- $posts := where .page.Site.RegularPages "Type" $posts_section -}}
+
+{{- with .category -}}
+  {{- $posts = where $posts "Params.categories" "intersect" (slice .) -}}
+{{- end -}}
+
+{{- if $tags -}}
+  {{- $tagsSlice := split $tags "," -}}
+  {{- $posts = where $posts "Params.tags" "intersect" $tagsSlice -}}
+{{- end -}}
+
+{{- if $requireDate }}
+    {{- $zeroTime := time.AsTime "0001-01-01T00:00:00Z" }}
+    {{- $posts = where $posts ".Date" "gt" $zeroTime }}
+{{- end }}
+{{- $posts = first $num (sort $posts "Date" "desc") -}}
+
+
+<ul class="{{ with $custom_class }}list_posts {{ . }}{{ else }}list_posts{{ end }}">
+    {{- if $posts    }}
+    {{- range $posts -}}
+        <li>
+            <a href="{{ .Permalink }}">
+                <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+                {{ .Title }}
+            </a>
+            {{- if $summary -}}
+                <p>{{ .Summary }}</p>
+            {{- end -}}
+        </li>
+    {{- end -}}
+    {{- else if $empty_content -}}
+    <li><a>-</a></li>
+    {{- end }}
+</ul>

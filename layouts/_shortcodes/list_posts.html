@@ -1,0 +1,20 @@
+{{- $postSection := .Get "postSection" -}}
+{{- $num := .Get "num" -}}
+{{- $requireDate := .Get "requireDate" }}
+{{- $category := .Get "category" -}}
+{{- $tags := .Get "tags" -}}
+{{- $summary := .Get "summary" -}}
+{{- $empty_content := .Get "empty_content" -}}
+{{- $class := .Get "class" -}}
+
+{{ partial "list_posts.html" (dict
+  "page" $
+  "postSection" $postSection
+  "num" $num
+  "requireDate" $requireDate
+  "category" $category
+  "tags" $tags
+  "summary" $summary
+  "empty_content" $empty_content
+  "class" $class
+) }}
