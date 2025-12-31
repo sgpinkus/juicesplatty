@@ -10,7 +10,6 @@
       "url" : {{ .Site.BaseURL }}
     }
     </script>
-
     <style type="text/css">
         img.wp-smiley,
         img.emoji {
@@ -38,4 +37,7 @@
     <meta property="og:site_name" content="{{ .Site.Title }}">
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
+    {{ if .Param "math" }}
+        {{ partialCached "math.html" . }}
+    {{ end }}
 </head>
