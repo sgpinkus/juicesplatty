@@ -1,0 +1,19 @@
+<input id="search-box" type="search" placeholder="Search…" />
+<ul id="search-results"></ul>
+
+<script src="{{ "js/lunr.js" | relURL }}"></script>
+<script src="{{ "js/search.js" | relURL }}"></script>
+
+<script>
+document.getElementById("search-box").addEventListener("input", function () {
+  const results = runSearch(this.value);
+  const list = document.getElementById("search-results");
+  list.innerHTML = "";
+
+  results.forEach(p => {
+    const li = document.createElement("li");
+    li.innerHTML = `<a href="${p.uri}">${p.title}</a>`;
+    list.appendChild(li);
+  });
+});
+</script>

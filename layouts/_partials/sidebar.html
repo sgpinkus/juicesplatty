@@ -3,6 +3,9 @@
 
 <div class="sidebar1 widgets columns-1">
     {{ partial "sidebar_top.html" }}
+    {{- if .Site.Params.sidebar.enableSearch }}
+    {{ partial "search.html" . }}
+    {{- end }}
     <aside class="widget widget_categories">
         <h2>{{ T "categories_title" }}</h2>
         <ul class="widget__list">

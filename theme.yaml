@@ -1,0 +1,24 @@
+name: Juicesplatty
+license: GPLv3
+licenselink: https://github.com/sgpinkus/juicesplatty/blob/master/LICENSE
+description: Responsive Hugo theme based on Inkblot of WordPress theme
+homepage: https://github.com/sgpinkus/juicesplatty/
+tags:
+  - blog
+  - responsive
+  - wordpress
+  - disqus
+  - google analytics
+features:
+  - blog
+  - responsive
+  - wordpress
+  - disqus
+  - google analytics
+min_version: "0.58"
+author:
+  name: sgpinkus
+original:
+  name: Inkblot
+  homepage: https://github.com/mgsisk/inkblot
+  repo: https://github.com/mgsisk/inkblot
