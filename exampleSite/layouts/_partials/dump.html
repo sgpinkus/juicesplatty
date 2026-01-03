@@ -1,0 +1,8 @@
+{{- $page := .page }}
+{{- $site := .site }}
+<h3>.</h3>
+<pre style="white-space: wrap">{{ printf "%#v" . }}</pre>
+<h3>site:</h3>
+<pre style="white-space: wrap">{{ printf "%#v" $site }}</pre>
+<h3>page:</h3>
+<pre style="white-space: wrap">{{ printf "%#v" $page }}</pre>

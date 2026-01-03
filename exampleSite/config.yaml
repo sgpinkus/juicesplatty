@@ -1,54 +1,73 @@
-baseURL: "https://example.com"
-title: "Juicesplatty"
-author: "Author"
-theme: "juicesplatty"
-paginate: 10
-languageCode: "en-us"
-DefaultContentLanguage: "en-us"
-hasCJKLanguage: "true"
-enableInlineShortcodes: true
-footnoteReturnLinkContents: "^"
-disqusShortname: ""
-googleAnalytics: ""
-summaryLength: 150
-pygmentsUseClasses: true
-pygmentsCodefences: true
-permalinks:
-  post: "/:slug/"
-  page: "/:slug/"
-taxonomies:
-  tag: "tags"
-  category: "categories"
-  archive: "archives"
+baseURL: https://example.org/
+languageCode: en-us
+title: My New Hugo Site
+author: author
+theme: ""
+pagination:
+  pagerSize: 3
+outputs:
+  home: [HTML, RSS, JSON]
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - '\['
+            - '\]'
+          - - $$
+            - $$
+          inline:
+          - - '\('
+            - '\)'
+        enable: true
+params:
+  contentTypeName: "posts"
+  showMenuItems: 2
+  fullWidthTheme: false
+  centerTheme: false
+  math: false
+  sidebar:
+    enableSearch: true
+enableEmoji: true
+languages:
+  en:
+    title: "/"
+    subtitle: "A simple theme"
+    keywords: ""
+    copyright: ""
+    menuMore: "Show more"
+    readMore: "Read more"
+    readOtherPosts: "Read other posts"
+    params:
+      logo:
+        logoText: "/"
+        logoHomeLink: "/"
 menus:
   main:
     - identifier: "about"
       name: "About"
       weight: 1
       pageRef: "/about/"
-    - identifier: "posts"
+    - identifier: "goedecke"
+      name: "Popular Posts"
+      pageRef: "/popular"
+      weight: 3
+    - identifier: "Posts"
       name: "Posts"
       pageRef: "/posts/"
-      weight: 2
+      weight: 3
     - identifier: "services"
       name: "Services"
       # pageRef: "/services/"
-      weight: 30
+      weight: 2
     - name: "dumps"
       pageRef: "/dump"
       parent: "services"
       weight: 10
-    - name: "cores"
-      pageRef: "/core"
+    - name: "pits"
+      url: "https://en.wikipedia.org/wiki/Pit_(nuclear_weapon)"
       parent: "services"
       weight: 20
-params:
-  readmore: true
-outputs: # c.f. https://gohugo.io/templates/output-formats/
-  home: ["HTML", "RSS"]
-  page: ["HTML"]
-  section: ["HTML", "RSS"]
-  taxonomyTerm: ["HTML", "RSS"]
-  taxonomy: ["HTML", "RSS"]
-sitemap:
-  filename: "sitemap.xml" # c.f. https://gohugo.io/templates/sitemap-template/#configure-sitemap-xml
